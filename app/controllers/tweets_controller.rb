@@ -14,6 +14,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     #バリデーションに引っかからず保存されれば、「投稿完了」の画面が呼び出される
     if @tweet.save
+      root_path
     else
       #バリデーションに引っかかり保存されなければ、「新規投稿」の画面を呼び出す
       render 'new'
